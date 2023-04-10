@@ -19,7 +19,6 @@ export const StyledTabBar = styled.nav`
   ul {
     display: grid;
     text-align: center;
-    padding: 0 0 0 1.625rem;
     margin: 0;
     height: 100%;
     align-items: center;
@@ -42,6 +41,7 @@ export const StyledTabBar = styled.nav`
   @media screen and (min-width: 75rem) {
     ul {
       grid-template-columns: repeat(auto-fill, minmax(9.375rem, 1fr));
+      padding: 0 0 0 1.625rem;
       a, a > li {
       flex-direction: row;
       gap: .75rem;
@@ -53,6 +53,7 @@ export const StyledTabBar = styled.nav`
   @media screen and (max-width: 75rem) {
     ul {
       grid-template-columns: repeat(5, 1fr);
+      padding: 0;
       a, a > li {
       flex-direction: column;
       gap: 0.375rem;
