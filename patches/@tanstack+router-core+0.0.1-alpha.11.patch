@@ -1,0 +1,22 @@
+diff --git a/node_modules/@tanstack/router-core/build/types/index.d.ts b/node_modules/@tanstack/router-core/build/types/index.d.ts
+index 63faabb..0485014 100644
+--- a/node_modules/@tanstack/router-core/build/types/index.d.ts
++++ b/node_modules/@tanstack/router-core/build/types/index.d.ts
+@@ -541,7 +541,7 @@ declare type SearchParamOptions<TAllRouteInfo extends AnyAllRouteInfo, TFrom, TT
+ } : keyof PickRequired<TToSchema> extends never ? {
+     search?: SearchReducer<TFromSchema, TToSchema>;
+ } : {
+-    search: SearchReducer<TFromSchema, TToSchema>;
++    search?: SearchReducer<TFromSchema, TToSchema>;
+ };
+ declare type SearchReducer<TFrom, TTo> = {
+     [TKey in keyof TTo]: TTo[TKey];
+@@ -551,7 +551,7 @@ declare type PathParamOptions<TAllRouteInfo extends AnyAllRouteInfo, TFrom, TTo,
+ } : AnyPathParams extends TToParams ? {
+     params?: ParamsReducer<TFromParams, Record<string, never>>;
+ } : {
+-    params: ParamsReducer<TFromParams, TToParams>;
++    params?: ParamsReducer<TFromParams, TToParams>;
+ };
+ declare type ParamsReducer<TFrom, TTo> = TTo | ((current: TFrom) => TTo);
+ declare type ToPathOption<TAllRouteInfo extends AnyAllRouteInfo = DefaultAllRouteInfo, TFrom extends ValidFromPath<TAllRouteInfo> = '/', TTo extends string = '.'> = TTo | RelativeToPathAutoComplete<TAllRouteInfo['routePaths'], NoInfer<TFrom> extends string ? NoInfer<TFrom> : '', NoInfer<TTo> & string>;
