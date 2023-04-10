@@ -7,7 +7,7 @@ import {
   ChartLineData,
   Settings,
 } from "@carbon/icons-react";
-import { router } from "../../router/router";
+import { router } from "@/router/router";
 
 export const StyledTabBar = styled.nav`
   background-color: #131313;
@@ -18,9 +18,8 @@ export const StyledTabBar = styled.nav`
   width: 100vw;
   ul {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
     text-align: center;
-    padding: 0;
+    padding: 0 0 0 1.625rem;
     margin: 0;
     height: 100%;
     align-items: center;
@@ -28,20 +27,38 @@ export const StyledTabBar = styled.nav`
     a,
     a > li {
       display: flex;
-      justify-content: center;
       align-items: center;
-      flex-direction: column;
     }
     a {
       text-decoration: none;
       height: 100%;
       -webkit-tap-highlight-color: transparent;
       li {
-        gap: 0.375rem;
         color: white;
-        font-size: 0.75rem;
         font-weight: 500;
       }
+    }
+  }
+  @media screen and (min-width: 75rem) {
+    ul {
+      grid-template-columns: repeat(auto-fill, minmax(9.375rem, 1fr));
+      a, a > li {
+      flex-direction: row;
+      gap: .75rem;
+      justify-content: flex-start;
+      font-size: .875rem;
+    }
+    }
+  }
+  @media screen and (max-width: 75rem) {
+    ul {
+      grid-template-columns: repeat(5, 1fr);
+      a, a > li {
+      flex-direction: column;
+      gap: 0.375rem;
+      justify-content: center;
+      font-size: 0.75rem;
+    }
     }
   }
 `;
