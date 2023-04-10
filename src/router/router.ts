@@ -1,9 +1,14 @@
 import { createReactRouter, createRouteConfig } from "@tanstack/react-router";
-import Home from "@/features/Home/HomeView"
-import Accounts from "@/features/Accounts/AccountsView"
-import Budget from "@/features/Budget/BudgetView"
-import Data from "@/features/Data/DataView"
-import Settings from "@/features/Settings/SettingsView"
+import Home from "@/features/Home/HomeView";
+import Accounts from "@/features/Accounts/AccountsView";
+import AccountsIndex from "@/features/Accounts/children/AccountsIndex/AccountsIndexView";
+import Account from "@/features/Accounts/children/Account/AccountView";
+import Budget from "@/features/Budget/BudgetView";
+import Data from "@/features/Data/DataView";
+import DataGlobal from "@/features/Data/children/DataGlobal/DataGlobalView";
+import DataIndex from "@/features/Data/children/DataIndex/DataIndexView";
+import DataMonthly from "@/features/Data/children/DataMonthly/DataMonthlyView";
+import Settings from "@/features/Settings/SettingsView";
 
 export const routeConfig = createRouteConfig().createChildren((createRoute) => [
   createRoute({
@@ -18,20 +23,24 @@ export const routeConfig = createRouteConfig().createChildren((createRoute) => [
     path: "accounts",
     element: Accounts(),
   }).createChildren((createRoute) => [
-    createRoute({ path: "/", element: "Accounts Index" }),
+    createRoute({ path: "/", element: AccountsIndex() }),
     createRoute({
       path: ":id",
-      element: "Account",
+      element: Account(),
     }),
   ]),
   createRoute({
     path: "data",
     element: Data(),
   }).createChildren((createRoute) => [
-    createRoute({ path: "/", element: "Data Index" }),
+    createRoute({ path: "/", element: DataIndex() }),
     createRoute({
       path: "/global",
-      element: "Global",
+      element: DataGlobal(),
+    }),
+    createRoute({
+      path: "/monthly",
+      element: DataMonthly(),
     }),
   ]),
   createRoute({

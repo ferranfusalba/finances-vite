@@ -21,6 +21,12 @@ h2 {
   margin: 0;
 }
 
+// TODO: Move this to StyledSectionHeader with subtitle or proper component
+h3 {
+  margin: 0;
+  padding: 1rem;
+}
+
 body {
   margin: .625rem;
 }
