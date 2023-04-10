@@ -10,8 +10,7 @@ import {
 import { router } from "../../router/router";
 
 export const StyledTabBar = styled.nav`
-  // background-color: var(--primary);
-  background-color: navy;
+  background-color: #131313;
   height: 3.75rem;
   position: fixed;
   bottom: 0;
