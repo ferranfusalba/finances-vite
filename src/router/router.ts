@@ -1,9 +1,9 @@
 import { createReactRouter, createRouteConfig } from "@tanstack/react-router";
-import Home from "../features/Home/HomeView"
-import Accounts from "../features/Accounts/AccountsView"
-import Budget from "../features/Budget/BudgetView"
-import Data from "../features/Data/DataView"
-import Settings from "../features/Settings/SettingsView"
+import Home from "@/features/Home/HomeView"
+import Accounts from "@/features/Accounts/AccountsView"
+import Budget from "@/features/Budget/BudgetView"
+import Data from "@/features/Data/DataView"
+import Settings from "@/features/Settings/SettingsView"
 
 export const routeConfig = createRouteConfig().createChildren((createRoute) => [
   createRoute({

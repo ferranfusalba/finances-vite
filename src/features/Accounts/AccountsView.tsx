@@ -1,4 +1,4 @@
-import SectionHeader from "../../components/SectionHeader/SectionHeader"
+import SectionHeader from "@/components/SectionHeader/SectionHeader"
 
 const Accounts = () => {
   return (
