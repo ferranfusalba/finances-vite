@@ -1,7 +1,9 @@
+import SectionHeader from "../../components/SectionHeader/SectionHeader"
+
 const Home = () => {
   return (
     <>
-      <h1>Home</h1>
+      <SectionHeader title="Home" />
     </>
   );
 };

@@ -1,7 +1,9 @@
+import SectionHeader from "../../components/SectionHeader/SectionHeader"
+
 const Budget = () => {
   return (
     <>
-      <h1>Budget</h1>
+      <SectionHeader title="Budget" />
     </>
   );
 };
