@@ -1,4 +1,4 @@
-import './App.css'
+import GlobalStyle from './globalStyles';
 import TabBar from './components/TabBar/TabBar'
 import {
   Outlet,
@@ -9,12 +9,13 @@ import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 
 function App() {
   return (
-    <div className="App">
+    <>
+    <GlobalStyle />
       <RouterProvider router={router}>
         <Outlet />
         <TabBar />
       </RouterProvider>
-    </div>
+    </>
   )
 }
 
