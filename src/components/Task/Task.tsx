@@ -46,7 +46,9 @@ const StyledTask = styled.div`
 
 const Task = ({ title }: { title: string }) => {
   const task = useStore((store) =>
-    store.tasks.find((task) => task.title === title)
+    store.tasks.find(
+      (task: { title: string; state: string }) => task.title === title
+    )
   );
   const setDraggedTask = useStore((store) => store.setDraggedTask);
   const deleteTask = useStore((store) => store.deleteTask);

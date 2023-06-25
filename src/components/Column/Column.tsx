@@ -56,7 +56,9 @@ const Column = ({ state }: { state: string }) => {
   const [drop, setDrop] = useState(false);
 
   const tasks = useStore((store) =>
-    store.tasks.filter((task) => task.state === state)
+    store.tasks.filter(
+      (task: { title: string; state: string }) => task.state === state
+    )
   );
   const addTask = useStore((store) => store.addTask);
   const setDraggedTask = useStore((store) => store.setDraggedTask);

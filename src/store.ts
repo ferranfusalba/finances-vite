@@ -5,13 +5,13 @@ const store = (set) => ({
   // Tasks
   tasks: [],
   draggedTask: null,
-  addTask: (title, state) =>
+  addTask: (title: string, state: string) =>
     set(
       (store) => ({ tasks: [...store.tasks, { title, state }] }),
       false,
       "ADD_TASK"
     ),
-  deleteTask: (title, state) =>
+  deleteTask: (title: string, state: string) =>
     set(
       (store) => ({
         tasks: store.tasks.filter((task) => task.title !== title),
@@ -20,8 +20,8 @@ const store = (set) => ({
       false,
       "DELETE_TASK"
     ),
-  setDraggedTask: (title) => set({ draggedTask: title }),
-  moveTask: (title, state) =>
+  setDraggedTask: (title: string) => set({ draggedTask: title }),
+  moveTask: (title: string, state: string) =>
     set(
       (store) => ({
         tasks: store.tasks.map((task) =>
@@ -33,14 +33,14 @@ const store = (set) => ({
     ),
   // Accounts
   accounts: [],
-  addAccount: (title) =>
+  addAccount: (title: string) =>
     set(
       (store) => ({ accounts: [...store.accounts, { title }] }),
       false,
       "ADD_ACCOUNT"
     ),
-  // updateAccount: (title) => set(), // TODO: Add updateAccount action
-  deleteAccount: (title) =>
+  // updateAccount: (title: string) => set(), // TODO: Add updateAccount action
+  deleteAccount: (title: string) =>
     set(
       (store) => ({
         accounts: store.accounts.filter((account) => account.title !== title),
