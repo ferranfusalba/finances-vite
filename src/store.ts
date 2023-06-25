@@ -2,6 +2,7 @@ import { create } from "zustand";
 import { devtools, persist } from "zustand/middleware";
 
 const store = (set) => ({
+  // Tasks
   tasks: [],
   draggedTask: null,
   addTask: (title, state) =>
@@ -14,6 +15,7 @@ const store = (set) => ({
     set(
       (store) => ({
         tasks: store.tasks.filter((task) => task.title !== title),
+        // TODO: Replace this by unique id instead of title
       }),
       false,
       "DELETE_TASK"
@@ -29,6 +31,24 @@ const store = (set) => ({
       false,
       "MOVE_TASK"
     ),
+  // Accounts
+  accounts: [],
+  addAccount: (title) =>
+    set(
+      (store) => ({ accounts: [...store.accounts, { title }] }),
+      false,
+      "ADD_ACCOUNT"
+    ),
+  // updateAccount: (title) => set(),
+  deleteAccount: (title) =>
+    set(
+      (store) => ({
+        accounts: store.accounts.filter((account) => account.title !== title),
+        // TODO: Replace this by unique id instead of title
+      }),
+      false,
+      "DELETE_ACCOUNT"
+    ),
 });
 
 const log = (config) => (set, get, api) =>
@@ -38,7 +58,7 @@ const log = (config) => (set, get, api) =>
       //   if (!current) {
       //     // get state from external store
       //   }
-      console.log(args);
+      // console.log(args);
       set(...args);
     },
     get,

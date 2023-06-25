@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Task from "../Task/Task";
-import { useStore } from "../../store";
+import { useStore } from "@/store";
 import { useState } from "react";
 
 const StyledColumn = styled.div`

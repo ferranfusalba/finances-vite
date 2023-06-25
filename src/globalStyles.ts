@@ -29,7 +29,7 @@ h2 {
 }
 
 // TODO: Move this to StyledSectionHeader with subtitle or proper component
-h3 {
+h3, small {
   margin: 0;
   padding: 1rem;
 }
