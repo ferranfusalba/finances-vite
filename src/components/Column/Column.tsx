@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useStore } from "@/store";
 
 // Components
-import Task from "../Task/Task";
+import Task from "@/components/Task/Task";
 
 // Domain
 import { StyledColumn } from "./StyledColumn";
