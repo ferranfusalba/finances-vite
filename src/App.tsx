@@ -1,17 +1,14 @@
 import GlobalStyle from "./globalStyles";
 import TabBar from "./components/TabBar/TabBar";
-import { Outlet, RouterProvider } from "@tanstack/react-router";
-import { router } from "./router/router";
-import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
+import { RouterProvider } from "@tanstack/router";
+
+import { router } from "./routes";
 
 function App() {
   return (
     <>
       <GlobalStyle />
-      <RouterProvider router={router}>
-        <Outlet />
-        <TabBar />
-      </RouterProvider>
+      <RouterProvider router={router} />
     </>
   );
 }

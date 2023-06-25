@@ -12,8 +12,7 @@
   "dependencies": {
     "@carbon/icons-react": "^11.17.0",
     "@carbon/react": "^1.26.0",
-    "@tanstack/react-router": "0.0.1-alpha.11",
-    "@tanstack/react-router-devtools": "0.0.1-alpha.8",
+    "@tanstack/router": "^0.0.1-beta.89",
     "@types/carbon__icons-react": "^11.16.0",
     "@types/react": "^18.0.14",
     "@types/react-dom": "^18.0.5",

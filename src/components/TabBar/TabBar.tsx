@@ -7,7 +7,7 @@ import {
   ChartLineData,
   Settings,
 } from "@carbon/icons-react";
-import { router } from "@/router/router";
+import { Link } from "@tanstack/router";
 
 export const StyledTabBar = styled.nav`
   background-color: #131313;
@@ -42,24 +42,26 @@ export const StyledTabBar = styled.nav`
     ul {
       grid-template-columns: repeat(auto-fill, minmax(9.375rem, 1fr));
       padding: 0 0 0 1.625rem;
-      a, a > li {
-      flex-direction: row;
-      gap: .75rem;
-      justify-content: flex-start;
-      font-size: .875rem;
-    }
+      a,
+      a > li {
+        flex-direction: row;
+        gap: 0.75rem;
+        justify-content: flex-start;
+        font-size: 0.875rem;
+      }
     }
   }
   @media screen and (max-width: 75rem) {
     ul {
       grid-template-columns: repeat(5, 1fr);
       padding: 0;
-      a, a > li {
-      flex-direction: column;
-      gap: 0.375rem;
-      justify-content: center;
-      font-size: 0.75rem;
-    }
+      a,
+      a > li {
+        flex-direction: column;
+        gap: 0.375rem;
+        justify-content: center;
+        font-size: 0.75rem;
+      }
     }
   }
 `;
@@ -74,12 +76,12 @@ const TabBarSection = ({
   children: ReactNode;
 }) => {
   return (
-    <router.Link to={link}>
+    <Link to={link}>
       <li>
         {children}
         {sectionTitle}
       </li>
-    </router.Link>
+    </Link>
   );
 };
 
