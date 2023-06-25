@@ -1,5 +1,8 @@
+// Zustand Store
 import { create } from "zustand";
 import { devtools, persist } from "zustand/middleware";
+
+// Types
 import { Store, Task, Account } from "@/types/interfaces";
 
 // TODO: Replace any (check development issues)
