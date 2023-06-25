@@ -1,4 +1,5 @@
-import SectionHeader from "@/components/SectionHeader/SectionHeader"
+// Components
+import SectionHeader from "@/components/SectionHeader/SectionHeader";
 
 const DataGlobal = () => {
   return (
