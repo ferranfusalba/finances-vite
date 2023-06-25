@@ -1,5 +1,6 @@
-import SectionHeader from "@/components/SectionHeader/SectionHeader";
+// Components
 import Column from "@/components/Column/Column";
+// import SectionHeader from "@/components/SectionHeader/SectionHeader";
 
 const Settings = () => {
   return (
