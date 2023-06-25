@@ -22,7 +22,7 @@ interface Store {
   tasks: Array<Task>;
 }
 
-const store = (set: void) => ({
+const store = (set: any) => ({
   // Tasks
   tasks: [],
   draggedTask: null,
@@ -74,14 +74,14 @@ const store = (set: void) => ({
     ),
 });
 
-const log = (config: void) => (set: void, get: void, api: void) =>
+const log = (config: any) => (set: any, get: any, api: any) =>
   config(
-    (...args: {}) => {
+    (...args: any) => {
       //   const current = get();
       //   if (!current) {
       //     // get state from external store
       //   }
-      // console.log(args, typeof args);
+      console.log(args, typeof args);
       set(...args);
     },
     get,
