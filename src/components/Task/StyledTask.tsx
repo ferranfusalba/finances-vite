@@ -1,7 +1,7 @@
 // Styled Components
 import styled from "styled-components";
 
-const StyledTask = styled.div`
+export const StyledTask = styled.div`
   background-color: white;
   border-radius: 0.25rem;
   min-height: 5rem;
