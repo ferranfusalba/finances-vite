@@ -15,6 +15,12 @@ const GlobalStyle = createGlobalStyle`
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  --color-gray: #333333;
+  --color-gray-dark: #222222;
+  --color-gray-light: #cccccc;
+  --color-ongoing: #98c1d9;
+  --color-done: #ee6c4d;
 }
 
 h2 {
@@ -29,6 +35,17 @@ h3 {
 
 body {
   margin: .625rem;
+}
+
+// TODO: Testing Zustand
+.settings {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 @media (prefers-color-scheme: light) {
