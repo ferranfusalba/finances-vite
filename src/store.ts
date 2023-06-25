@@ -1,12 +1,12 @@
 import { create } from "zustand";
 import { devtools, persist } from "zustand/middleware";
 
-interface Task {
+export interface Task {
   title: string;
   status: string;
 }
 
-interface Account {
+export interface Account {
   title: string;
 }
 
@@ -22,19 +22,19 @@ interface Store {
   tasks: Array<Task>;
 }
 
-const store = (set) => ({
+const store = (set: void) => ({
   // Tasks
   tasks: [],
   draggedTask: null,
   addTask: (title: string, state: string) =>
     set(
-      (store) => ({ tasks: [...store.tasks, { title, state }] }),
+      (store: Store) => ({ tasks: [...store.tasks, { title, state }] }),
       false,
       "ADD_TASK"
     ),
   deleteTask: (title: string, state: string) =>
     set(
-      (store) => ({
+      (store: Store) => ({
         tasks: store.tasks.filter((task: Task) => task.title !== title),
         // TODO: Replace this by unique id instead of title
       }),
@@ -44,7 +44,7 @@ const store = (set) => ({
   setDraggedTask: (title: string) => set({ draggedTask: title }),
   moveTask: (title: string, state: string) =>
     set(
-      (store) => ({
+      (store: Store) => ({
         tasks: store.tasks.map((task: Task) =>
           task.title === title ? { title, state } : task
         ),
@@ -56,14 +56,14 @@ const store = (set) => ({
   accounts: [],
   addAccount: (title: string) =>
     set(
-      (store) => ({ accounts: [...store.accounts, { title }] }),
+      (store: Store) => ({ accounts: [...store.accounts, { title }] }),
       false,
       "ADD_ACCOUNT"
     ),
   // updateAccount: (title: string) => set(), // TODO: Add updateAccount action
   deleteAccount: (title: string) =>
     set(
-      (store) => ({
+      (store: Store) => ({
         accounts: store.accounts.filter(
           (account: Account) => account.title !== title
         ),
@@ -74,14 +74,14 @@ const store = (set) => ({
     ),
 });
 
-const log = (config) => (set, get, api) =>
+const log = (config: void) => (set: void, get: void, api: void) =>
   config(
-    (...args) => {
+    (...args: {}) => {
       //   const current = get();
       //   if (!current) {
       //     // get state from external store
       //   }
-      // console.log(args);
+      // console.log(args, typeof args);
       set(...args);
     },
     get,
