@@ -1,6 +1,27 @@
 import { create } from "zustand";
 import { devtools, persist } from "zustand/middleware";
 
+interface Task {
+  title: string;
+  status: string;
+}
+
+interface Account {
+  title: string;
+}
+
+interface Store {
+  accounts: Array<Account>;
+  addAccount: (title: string) => void;
+  addTask: (title: string, state: string) => void;
+  deleteAccount: (title: string) => void;
+  deleteTask: (title: string, state: string) => void;
+  draggedTask: (title: string) => void;
+  moveTask: (title: string, state: string) => void;
+  setDraggedTask: (title: string) => void;
+  tasks: Array<Task>;
+}
+
 const store = (set) => ({
   // Tasks
   tasks: [],
@@ -14,7 +35,7 @@ const store = (set) => ({
   deleteTask: (title: string, state: string) =>
     set(
       (store) => ({
-        tasks: store.tasks.filter((task) => task.title !== title),
+        tasks: store.tasks.filter((task: Task) => task.title !== title),
         // TODO: Replace this by unique id instead of title
       }),
       false,
@@ -24,7 +45,7 @@ const store = (set) => ({
   moveTask: (title: string, state: string) =>
     set(
       (store) => ({
-        tasks: store.tasks.map((task) =>
+        tasks: store.tasks.map((task: Task) =>
           task.title === title ? { title, state } : task
         ),
       }),
@@ -43,7 +64,9 @@ const store = (set) => ({
   deleteAccount: (title: string) =>
     set(
       (store) => ({
-        accounts: store.accounts.filter((account) => account.title !== title),
+        accounts: store.accounts.filter(
+          (account: Account) => account.title !== title
+        ),
         // TODO: Replace this by unique id instead of title
       }),
       false,

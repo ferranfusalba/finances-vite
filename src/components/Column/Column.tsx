@@ -91,7 +91,7 @@ const Column = ({ state }: { state: string }) => {
           Add
         </button>
       </div>
-      {tasks.map((task) => (
+      {tasks.map((task: { title: string; state: string }) => (
         <Task title={task.title} key={task.title}></Task>
       ))}
       {open && (

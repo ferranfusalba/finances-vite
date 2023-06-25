@@ -34,7 +34,7 @@ const AccountsMenu = () => {
       </button>
       <br />
       <small>Accounts List:</small>
-      {accounts.map((account) => (
+      {accounts.map((account: { title: string }) => (
         <div key={account.title}>
           <p>{account.title}</p>
           <small onClick={() => deleteAccount(account.title)}>X</small>
