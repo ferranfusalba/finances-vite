@@ -1,4 +1,4 @@
-// Styled Components
+// Dependencies > Styled Components
 import styled from "styled-components";
 
 export const StyledTask = styled.div`

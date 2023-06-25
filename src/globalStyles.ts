@@ -1,4 +1,4 @@
-// Styled Components
+// Dependencies > Styled Components
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
