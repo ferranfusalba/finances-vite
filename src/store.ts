@@ -39,7 +39,7 @@ const store = (set) => ({
       false,
       "ADD_ACCOUNT"
     ),
-  // updateAccount: (title) => set(),
+  // updateAccount: (title) => set(), // TODO: Add updateAccount action
   deleteAccount: (title) =>
     set(
       (store) => ({

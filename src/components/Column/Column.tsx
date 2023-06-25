@@ -1,7 +1,14 @@
-import styled from "styled-components";
-import Task from "../Task/Task";
-import { useStore } from "@/store";
+// React
 import { useState } from "react";
+
+// Zustand Store
+import { useStore } from "@/store";
+
+// Components
+import Task from "../Task/Task";
+
+// Styled Components TODO: Move to specific file
+import styled from "styled-components";
 
 const StyledColumn = styled.div`
   background: var(--color-gray-dark);

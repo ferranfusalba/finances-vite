@@ -1,6 +1,11 @@
-import styled from "styled-components";
-import { useStore } from "../../store";
+// Zustand Store
+import { useStore } from "@/store";
+
+// Dependencies > ClassNames
 import classNames from "classnames";
+
+// Styled Components TODO: Move to specific file
+import styled from "styled-components";
 
 const StyledTask = styled.div`
   background-color: white;
