@@ -1,27 +1,8 @@
 import { create } from "zustand";
 import { devtools, persist } from "zustand/middleware";
+import { Store, Task, Account } from "@/types/interfaces";
 
-export interface Task {
-  title: string;
-  status: string;
-}
-
-export interface Account {
-  title: string;
-}
-
-interface Store {
-  accounts: Array<Account>;
-  addAccount: (title: string) => void;
-  addTask: (title: string, state: string) => void;
-  deleteAccount: (title: string) => void;
-  deleteTask: (title: string, state: string) => void;
-  draggedTask: (title: string) => void;
-  moveTask: (title: string, state: string) => void;
-  setDraggedTask: (title: string) => void;
-  tasks: Array<Task>;
-}
-
+// TODO: Replace any (check development issues)
 const store = (set: any) => ({
   // Tasks
   tasks: [],
@@ -74,14 +55,16 @@ const store = (set: any) => ({
     ),
 });
 
+// TODO: Replace any (check development issues)
 const log = (config: any) => (set: any, get: any, api: any) =>
   config(
+    // TODO: Replace any (check development issues)
     (...args: any) => {
       //   const current = get();
       //   if (!current) {
       //     // get state from external store
       //   }
-      console.log(args, typeof args);
+      // console.log(args, typeof args);
       set(...args);
     },
     get,
