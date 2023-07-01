@@ -42,18 +42,17 @@ const store = (set: any) => ({
     set((store: Store) => ({ accounts: accounts }), false, "GET_ACCOUNTS_LIST"),
   addAccount: (title: string) =>
     set(
-      (store: Store) => ({ accounts: [...store.accounts, { title }] }),
+      (store: Store) => ({ accounts: [...store.accounts, { title }] }), // TODO: Add account by id returned from POST call to api
       false,
       "ADD_ACCOUNT"
     ),
   // updateAccount: (title: string) => set(), // TODO: Add updateAccount action
-  deleteAccount: (title: string) =>
+  deleteAccount: (id: string) =>
     set(
       (store: Store) => ({
         accounts: store.accounts.filter(
-          (account: Account) => account.title !== title
+          (account: Account) => account.id !== id
         ),
-        // TODO: Replace this by unique id instead of title
       }),
       false,
       "DELETE_ACCOUNT"

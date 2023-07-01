@@ -35,10 +35,10 @@ const AccountsMenu = () => {
       </button>
       <br />
       <small>Accounts List:</small>
-      {accounts.map((account: { title: string }) => (
-        <div key={account.title}>
-          <p>{account.title}</p>
-          <small onClick={() => deleteAccount(account.title)}>X</small>
+      {accounts.map((account: { id: string }) => (
+        <div key={account.id}>
+          <p>{account.accountName}</p>
+          <small onClick={() => deleteAccount(account.id)}>X</small>
         </div>
       ))}
     </>

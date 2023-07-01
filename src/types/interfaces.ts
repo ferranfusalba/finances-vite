@@ -42,7 +42,7 @@ export interface Store {
   accounts: Array<Account>;
   addAccount: (title: string) => void;
   addTask: (title: string, state: string) => void;
-  deleteAccount: (title: string) => void;
+  deleteAccount: (id: string) => void;
   deleteTask: (title: string, state: string) => void;
   draggedTask: (title: string) => void;
   moveTask: (title: string, state: string) => void;
