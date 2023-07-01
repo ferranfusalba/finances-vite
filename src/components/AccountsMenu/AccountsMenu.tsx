@@ -34,7 +34,7 @@ const AccountsMenu = () => {
           {accounts.map((account) => (
             <div key={account.id}>
               <StyledAccountButton>
-                <router.Link to={String(account.id)}>
+                <router.Link to={"/accounts/" + String(account.id)}>
                   {account.accountName}
                 </router.Link>
                 <button onClick={() => deleteAccount(account.id)}>
