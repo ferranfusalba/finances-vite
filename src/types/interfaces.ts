@@ -4,6 +4,8 @@ export interface Task {
 }
 
 export interface Account {
+  title?: string;
+  // TODO: Finish integrating old & new Account interfaces
   id: string;
   accountName: string;
   accountInfo: {
