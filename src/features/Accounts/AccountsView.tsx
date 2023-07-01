@@ -7,6 +7,10 @@ import { useStore } from "@/store";
 // Dependencies > TanStack Router
 import { Outlet } from "@tanstack/react-router";
 
+// Services > API
+import axios from "axios";
+import { getAccountsList } from "@/services/api/AccountsAPI";
+
 // Components
 import SectionHeader from "@/components/SectionHeader/SectionHeader";
 
@@ -19,6 +23,7 @@ const AccountsMenu = () => {
   return (
     <>
       <SectionHeader title="Accounts Menu" />
+      <hr />
       <input
         type="text"
         onChange={(e) => setText(e.target.value)}
@@ -49,6 +54,7 @@ const Accounts = () => {
     <>
       <SectionHeader title="Accounts" />
       <AccountsMenu />
+      <hr />
       <Outlet />
     </>
   );

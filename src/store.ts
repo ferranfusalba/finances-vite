@@ -38,6 +38,8 @@ const store = (set: any) => ({
     ),
   // Accounts
   accounts: [],
+  getAccountsList: (accounts: Array<Account>) =>
+    set((store: Store) => ({ accounts: accounts }), false, "GET_ACCOUNTS_LIST"),
   addAccount: (title: string) =>
     set(
       (store: Store) => ({ accounts: [...store.accounts, { title }] }),

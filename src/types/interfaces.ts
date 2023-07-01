@@ -4,7 +4,36 @@ export interface Task {
 }
 
 export interface Account {
-  title: string;
+  id: string;
+  accountName: string;
+  accountInfo: {
+    openingDate: string;
+    accountType: string;
+    iban: string;
+  };
+  holder: {
+    name: string;
+    surname1: string;
+    surname2: string;
+    address: {
+      street: string;
+      city: string;
+      code: string;
+    };
+  };
+  bank: {
+    entity: string;
+    branch: string;
+    bankAddress: {
+      street: string;
+      city: string;
+      code: string;
+    };
+  };
+  balance: {
+    initialBalance: number;
+    currentBalance: number;
+  };
 }
 
 export interface Store {

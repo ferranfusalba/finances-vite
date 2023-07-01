@@ -5,6 +5,9 @@ import GlobalStyle from "./globalStyles";
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 import { Outlet, RouterProvider } from "@tanstack/react-router";
 
+// Services > API
+import { getAccountsList } from "@/services/api/AccountsAPI";
+
 // Routes
 import { router } from "./router/router";
 
@@ -12,6 +15,8 @@ import { router } from "./router/router";
 import TabBar from "./components/TabBar/TabBar";
 
 function App() {
+  getAccountsList();
+
   return (
     <>
       <GlobalStyle />
