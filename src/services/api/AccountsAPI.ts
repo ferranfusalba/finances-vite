@@ -20,3 +20,7 @@ export const getAccountsList = (): Promise<Account> => {
       console.error("axios error", error);
     });
 };
+
+export const initStoreAPIData = (): void => {
+  getAccountsList();
+};

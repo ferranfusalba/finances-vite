@@ -7,10 +7,6 @@ import { useStore } from "@/store";
 // Dependencies > TanStack Router
 import { Outlet } from "@tanstack/react-router";
 
-// Services > API
-import axios from "axios";
-import { getAccountsList } from "@/services/api/AccountsAPI";
-
 // Components
 import SectionHeader from "@/components/SectionHeader/SectionHeader";
 
