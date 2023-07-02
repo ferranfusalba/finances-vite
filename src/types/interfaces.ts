@@ -3,6 +3,12 @@ export interface Task {
   status: string;
 }
 
+interface Address {
+  street: string;
+  city: string;
+  code: string;
+}
+
 export interface Account {
   title?: string;
   // TODO: Finish integrating old & new Account interfaces
@@ -17,20 +23,12 @@ export interface Account {
     name: string;
     surname1: string;
     surname2: string;
-    address: {
-      street: string;
-      city: string;
-      code: string;
-    };
+    address: Address;
   };
   bank: {
     entity: string;
     branch: string;
-    bankAddress: {
-      street: string;
-      city: string;
-      code: string;
-    };
+    bankAddress: Address;
   };
   balance: {
     initialBalance: number;
