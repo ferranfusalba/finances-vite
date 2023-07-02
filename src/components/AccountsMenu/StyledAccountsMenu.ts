@@ -20,6 +20,12 @@ export const StyledAccountButton = styled.li`
   &:last-of-type {
     margin-right: 0;
   }
+  button:nth-child(2) {
+    display: flex;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+  }
 `;
 
 export const StyledButtonArea = styled.div``;

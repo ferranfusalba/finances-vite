@@ -4,6 +4,9 @@ import { useState } from "react";
 // Zustand Store
 import { useStore } from "@/store";
 
+// Dependencies > Carbon Icons
+import { TrashCan } from "@carbon/icons-react";
+
 // Routes
 import { router } from "@/router/router";
 
@@ -38,7 +41,7 @@ const AccountsMenu = () => {
                   {account.accountName}
                 </router.Link>
                 <button onClick={() => deleteAccount(account.id)}>
-                  Delete
+                  <TrashCan />
                 </button>
               </StyledAccountButton>
             </div>
