@@ -35,7 +35,7 @@ h3, small {
 }
 
 body {
-  margin: .625rem;
+  margin: 0;
 }
 
 // TODO: Testing Zustand

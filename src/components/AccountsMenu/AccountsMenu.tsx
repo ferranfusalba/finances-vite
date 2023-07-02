@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useStore } from "@/store";
 
 // Dependencies > Carbon Icons
-import { TrashCan } from "@carbon/icons-react";
+import { AddAlt, TrashCan } from "@carbon/icons-react";
 
 // Types
 import { Account } from "@/types/interfaces";
@@ -17,8 +17,8 @@ import { router } from "@/router/router";
 import {
   StyledAccountsMenu,
   StyledAccountButton,
-  StyledButtonArea,
-  StyledScrollArea,
+  StyledAddAccountButtonWrapper,
+  StyledAccountsListWrapper,
 } from "./StyledAccountsMenu";
 
 const AccountsMenu = () => {
@@ -30,13 +30,12 @@ const AccountsMenu = () => {
   return (
     <>
       <StyledAccountsMenu>
-        <StyledButtonArea>
-          {/* <Button shape={SHAPE.square} onClick={() => setIsOpen(true)}>
-            +
-          </Button> */}
-          <button>Modal</button>
-        </StyledButtonArea>
-        <StyledScrollArea>
+        <StyledAddAccountButtonWrapper>
+          <StyledAccountButton>
+            <AddAlt />
+          </StyledAccountButton>
+        </StyledAddAccountButtonWrapper>
+        <StyledAccountsListWrapper>
           {accounts.map((account: Account) => (
             <div key={account.id}>
               <StyledAccountButton>
@@ -49,7 +48,7 @@ const AccountsMenu = () => {
               </StyledAccountButton>
             </div>
           ))}
-        </StyledScrollArea>
+        </StyledAccountsListWrapper>
       </StyledAccountsMenu>
 
       <hr />
