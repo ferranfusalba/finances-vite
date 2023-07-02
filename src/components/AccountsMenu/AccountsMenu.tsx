@@ -7,6 +7,9 @@ import { useStore } from "@/store";
 // Dependencies > Carbon Icons
 import { TrashCan } from "@carbon/icons-react";
 
+// Services > API
+import { addAccount } from "@/services/api/AccountsAPI";
+
 // Routes
 import { router } from "@/router/router";
 
@@ -21,8 +24,30 @@ import {
 const AccountsMenu = () => {
   const [text, setText] = useState("");
   const accounts = useStore((store) => store.accounts);
-  const addAccount = useStore((store) => store.addAccount);
+  // const addAccount = useStore((store) => store.addAccount);
   const deleteAccount = useStore((store) => store.deleteAccount);
+
+  const account12 = {
+    accountName: "Account 12",
+    openingDate: "01/07/2023",
+    IBAN: "DE00112234",
+    accountType: "Savings",
+    name: "Ferdinand",
+    surname1: "R",
+    surname2: "F",
+    street: "P Strasse",
+    city: "Berlin",
+    code: "B987",
+    entity: "N26",
+    branch: "N26 Bank AG",
+    bankStreet: "GM",
+    bankCity: "BCN",
+    bankCode: "08080",
+    initialBalance: 462,
+    currentBalance: 778,
+  };
+
+  console.log("account12", account12);
 
   return (
     <>
@@ -57,7 +82,9 @@ const AccountsMenu = () => {
       />
       <button
         onClick={() => {
-          addAccount(text);
+          // addAccount(text);
+          // addAccount(account12);
+          postAccount(account12);
           setText("");
         }}
       >
