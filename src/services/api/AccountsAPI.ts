@@ -21,6 +21,19 @@ export const getAccountsList = (): Promise<Account> => {
     });
 };
 
+export const addAccount = (account): Promise<any> => {
+  return axios
+    .post(import.meta.env.VITE_API + "account", account, {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    })
+    .then((res) => {
+      return res?.data;
+    });
+};
+
 export const initStoreAPIData = (): void => {
   getAccountsList();
 };
