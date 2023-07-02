@@ -7,6 +7,9 @@ import { useStore } from "@/store";
 // Dependencies > Carbon Icons
 import { TrashCan } from "@carbon/icons-react";
 
+// Types
+import { Account } from "@/types/interfaces";
+
 // Routes
 import { router } from "@/router/router";
 
@@ -34,7 +37,7 @@ const AccountsMenu = () => {
           <button>Modal</button>
         </StyledButtonArea>
         <StyledScrollArea>
-          {accounts.map((account) => (
+          {accounts.map((account: Account) => (
             <div key={account.id}>
               <StyledAccountButton>
                 <router.Link to={"/accounts/" + String(account.id)}>
