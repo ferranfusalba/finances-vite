@@ -1,6 +1,7 @@
 // Dependencies > Styled Components
 import styled from "styled-components";
 
+// TODO: Apply Concentric CSS rules if definitive Task component stays
 export const StyledTask = styled.div`
   background-color: white;
   border-radius: 0.25rem;

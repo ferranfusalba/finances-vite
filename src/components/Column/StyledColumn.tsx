@@ -1,6 +1,7 @@
 // Dependencies > Styled Components
 import styled from "styled-components";
 
+// TODO: Apply Concentric CSS rules if definitive Column component stays
 export const StyledColumn = styled.div`
   background: var(--color-gray-dark);
   min-height: 20rem;

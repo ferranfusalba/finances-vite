@@ -2,18 +2,18 @@
 import styled from "styled-components";
 
 export const StyledTabBar = styled.nav`
-  background-color: #131313;
-  height: 3.75rem;
   position: fixed;
   bottom: 0;
   left: 0;
+  background-color: #131313;
   width: 100vw;
+  height: 3.75rem;
   ul {
     display: grid;
-    text-align: center;
+    align-items: center;
     margin: 0;
     height: 100%;
-    align-items: center;
+    text-align: center;
     list-style-type: none;
     a,
     a > li {
@@ -21,12 +21,12 @@ export const StyledTabBar = styled.nav`
       align-items: center;
     }
     a {
-      text-decoration: none;
       height: 100%;
+      text-decoration: none;
       -webkit-tap-highlight-color: transparent;
       li {
-        color: white;
         font-weight: 500;
+        color: white;
       }
     }
   }

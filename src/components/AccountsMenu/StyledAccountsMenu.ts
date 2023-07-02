@@ -7,16 +7,16 @@ export const StyledAccountsMenu = styled.div`
 
 export const StyledAccountButton = styled.li`
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 0.625rem;
+  border: 2px solid white;
+  background: transparent;
   padding: 0 0.8rem;
+  width: max-content;
   min-width: 10rem;
   height: 2.75rem;
-  background: transparent;
-  border: 2px solid white;
-  margin: 0 0.625rem;
-  gap: 8px;
-  width: max-content;
   &:last-of-type {
     margin-right: 0;
   }
@@ -33,8 +33,8 @@ export const StyledButtonArea = styled.div``;
 export const StyledScrollArea = styled.ul`
   display: flex;
   flex-wrap: nowrap;
-  overflow: auto;
   padding: 0;
+  overflow: auto;
   text-align: center;
   -webkit-overflow-scrolling: touch;
   &::-webkit-scrollbar {
